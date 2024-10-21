@@ -43,10 +43,6 @@ public class Circle
 
     public boolean equals(Circle other)
     {
-        if (color == other.getColor() && x == other.getX() && y == other.getY() && radius == other.getRadius())
-            return true;
-        else
-            return false;
+        return ((color.equals(other.getColor())) && (x == other.getX()) && (y == other.getY()) && (radius == other.getRadius()));
     }
 }
-

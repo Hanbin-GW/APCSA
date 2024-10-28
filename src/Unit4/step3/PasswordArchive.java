@@ -1,7 +1,7 @@
 package Unit4.step3;
 import java.util.Scanner;
 
-public class Password
+public class PasswordArchive
 {
     public static void main(String[] args)
     {
@@ -17,17 +17,14 @@ public class Password
         // Create this method so that it checks to see that the password
         // is at least 8 characters long and only contains letters
         // and numbers.
-        if (password.length() < 8){
-            return false;
-        }
-        String requirement = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
+        int count = 0;
         for (int i = 0; i < password.length(); i++)
         {
-            if(requirement.indexOf(password.substring(i,i+1)) == -1)
+            if(password.charAt(i) >= '0' && password.charAt(i) <= '9' || password.charAt(i) >= 'a' && password.charAt(i) <= 'z' || password.charAt(i) >= 'A' && password.charAt(i) <= 'Z')
             {
-                return false;
+                count++;
             }
         }
-        return true;
+        return password.length() >= 8 && count == password.length();
     }
 }
